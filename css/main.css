@@ -146,6 +146,14 @@ body {
     margin: 0;
   }
 
+#logo {
+  display: inline-block;
+  width: 176px;
+  height: 38px;
+  background: url(../img/logo.png) no-repeat;
+  background-size: contain;
+}
+
 #body {
   margin-left: 220px;
 }
@@ -173,6 +181,11 @@ only screen and (                min-resolution: 2dppx) {
     background-image: url(../img/squiggle@2x.png);
     background-size: 230px 8px;
   }
+
+  #logo {
+    background-image: url(../img/logo@2x.png);
+  }
+
 }
 
 /* ==========================================================================
