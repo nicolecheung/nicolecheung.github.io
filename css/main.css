@@ -102,23 +102,37 @@ body {
 }
 
 #main {
+  position: relative;
 }
 
-  #main > .content {
-    display: table;
-    width: 100%;
+  #main::before,
+  #main::after {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 34px;
+    background: url(../img/squiggle.png) bottom repeat-x;
   }
 
-#navigation, #body {
-  display: table-cell;
-  vertical-align: top;
-}
+  #main::after {
+    top: auto;
+    bottom: 0;
+    background-position: top;
+  }
 
 #navigation {
-  width: 180px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px;
 }
 
 #body {
+  margin-left: 220px;
 }
 
 .section {
@@ -126,16 +140,24 @@ body {
   min-height: 800px;
 }
 
+/* ==========================================================================
+   Retina
+   ========================================================================== */
 
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
 
-
-
-
-
-
-
-
-
+  #main::before,
+  #main::after {
+    background-image: url(../img/squiggle@2x.png);
+    background-size: 230px 8px;
+  }
+}
 
 /* ==========================================================================
    Helper classes
