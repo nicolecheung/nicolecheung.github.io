@@ -101,7 +101,30 @@ body {
   background: #F8EED9;
 }
 
+#main {
+}
 
+  #main > .content {
+    display: table;
+    width: 100%;
+  }
+
+#navigation, #body {
+  display: table-cell;
+  vertical-align: top;
+}
+
+#navigation {
+  width: 180px;
+}
+
+#body {
+}
+
+.section {
+  min-height: 100vh;
+  min-height: 800px;
+}
 
 
 
