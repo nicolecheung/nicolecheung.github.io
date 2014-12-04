@@ -97,6 +97,14 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   background: #F8EED9;
 }
@@ -130,16 +138,22 @@ body {
   left: 0;
   bottom: 0;
   width: 320px;
-  padding: 46px 0;
+  padding: 56px 0;
 }
+
+  #navigation ul {
+    padding: 0;
+    margin: 0;
+  }
 
 #body {
   margin-left: 220px;
 }
 
 .section {
+  min-height: 600px;
   min-height: 100vh;
-  min-height: 800px;
+  padding: 56px 0;
 }
 
 /* ==========================================================================
