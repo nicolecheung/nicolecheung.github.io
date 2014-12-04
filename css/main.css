@@ -172,6 +172,7 @@ body {
     margin-left: 14px; /* 14 - 31 */
   }
 
+    /* The blunt end of the pencil */
     #navigation li::before {
       display: block;
       content: "";
@@ -194,6 +195,7 @@ body {
       color: #FFF;
     }
 
+      /* The pencil tip wood */
       #navigation li a::before,
       #navigation li a::after {
         display: block;
@@ -207,6 +209,7 @@ body {
         border-width: 16px 31px;
       }
 
+      /* The pencil tip */
       #navigation li a::after {
         border-left-color: #000;
         top: 50%;
