@@ -136,29 +136,40 @@ body {
     background-position: top;
   }
 
+#logo {
+  display: block;
+  width: 176px;
+  height: 38px;
+  background: url(../img/logo.png) no-repeat;
+  background-size: contain;
+  margin-bottom: 53px;
+}
+
 #navigation {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 320px;
-  padding: 56px 0;
+  padding: 84px 0;
 }
+
+  #navigation > .content {
+    max-width: 180px;
+    margin: 0 auto;
+  }
 
   #navigation ul {
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
   }
 
   #navigation li {
     position: relative;
-    display: inline-block;
-    min-width: 150px;
+    display: block;
     height: 32px;
     margin-bottom: 1em;
-    margin-left: 14px;
-    float: left;
-    clear: both;
+    margin-left: 14px; /* 14 - 31 */
   }
 
     #navigation li::before {
@@ -203,14 +214,6 @@ body {
         border-width: 6px 12px;
         margin-left: 22px;
       }
-
-#logo {
-  display: inline-block;
-  width: 176px;
-  height: 38px;
-  background: url(../img/logo.png) no-repeat;
-  background-size: contain;
-}
 
 #body {
   margin-left: 320px;
