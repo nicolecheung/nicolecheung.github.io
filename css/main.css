@@ -113,6 +113,12 @@ body {
   background: #F8EED9;
 }
 
+ul {
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+
 #main {
   position: relative;
 }
@@ -159,12 +165,11 @@ body {
     margin: 0 auto;
   }
 
-  #navigation ul {
-    padding: 0;
-    margin: 0 auto;
+  .nav {
+    margin-bottom: 4rem;
   }
 
-  #navigation li {
+  .nav li {
     position: relative;
     display: block;
     height: 32px;
@@ -173,7 +178,7 @@ body {
   }
 
     /* The blunt end of the pencil */
-    #navigation li::before {
+    .nav li::before {
       display: block;
       content: "";
       position: absolute;
@@ -186,7 +191,7 @@ body {
       border-radius: 6px 0 0 6px;
     }
 
-    #navigation li a {
+    .nav li a {
       display: block;
       height: 32px;
       line-height: 32px;
@@ -195,14 +200,14 @@ body {
       transition: all 0.3s ease;
     }
 
-    #navigation li:hover a {
+    .nav li:hover a {
       background: #E5C53C;
       color: #FFF;
     }
 
       /* The pencil tip wood */
-      #navigation li a::before,
-      #navigation li a::after {
+      .nav li a::before,
+      .nav li a::after {
         display: block;
         opacity: 0;
         content: "";
@@ -216,19 +221,54 @@ body {
         transition: opacity 0.3s ease;
       }
 
-      #navigation li:hover a::before,
-      #navigation li:hover a::after {
+      .nav li:hover a::before,
+      .nav li:hover a::after {
         opacity: 100;
       }
 
       /* The pencil tip */
-      #navigation li a::after {
+      .nav li a::after {
         border-left-color: #000;
         top: 50%;
         margin-top: -6px;
         border-width: 6px 12px;
         margin-left: 22px;
       }
+
+  .social {
+    position: absolute;
+    bottom: 90px;
+  }
+
+  .social ul {
+    text-align: center;
+  }
+
+  .social li {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-size: 36px 36px;
+    background-positon: top left;
+    margin: 0 3px;
+
+  }
+
+    .social .twitter {
+      background-image: url(../img/social_twitter.png);
+    }
+
+    .social .instagram {
+      background-image: url(../img/social_instagram.png);
+    }
+
+    .social .vimeo {
+      background-image: url(../img/social_vimeo.png);
+    }
+
+    .social .youtube {
+      background-image: url(../img/social_youtube.png);
+    }
 
 #body {
   margin-left: 320px;
@@ -260,6 +300,22 @@ only screen and (                min-resolution: 2dppx) {
 
   #logo {
     background-image: url(../img/logo@2x.png);
+  }
+
+  .social .twitter {
+    background-image: url(../img/social_twitter@2x.png);
+  }
+
+  .social .instagram {
+    background-image: url(../img/social_instagram@2x.png);
+  }
+
+  .social .vimeo {
+    background-image: url(../img/social_vimeo@2x.png);
+  }
+
+  .social .youtube {
+    background-image: url(../img/social_youtube@2x.png);
   }
 
 }
