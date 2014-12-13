@@ -190,8 +190,13 @@ body {
       display: block;
       height: 32px;
       line-height: 32px;
-      background: #E5C53C;
       padding: 0 5px;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    #navigation li:hover a {
+      background: #E5C53C;
       color: #FFF;
     }
 
@@ -199,6 +204,7 @@ body {
       #navigation li a::before,
       #navigation li a::after {
         display: block;
+        opacity: 0;
         content: "";
         position: absolute;
         left: 100%;
@@ -207,6 +213,12 @@ body {
         border-style: solid;
         border-color: transparent transparent transparent #EBD8A3;
         border-width: 16px 31px;
+        transition: opacity 0.3s ease;
+      }
+
+      #navigation li:hover a::before,
+      #navigation li:hover a::after {
+        opacity: 100;
       }
 
       /* The pencil tip */
