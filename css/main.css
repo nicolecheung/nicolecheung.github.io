@@ -204,6 +204,7 @@ ul {
       transition: all 0.3s ease;
     }
 
+    .nav li.active a,
     .nav li:hover a {
       background: #E5C53C;
       color: #FFF;
@@ -225,6 +226,8 @@ ul {
         transition: opacity 0.3s ease;
       }
 
+      .nav li.active a::before,
+      .nav li.active a::after,
       .nav li:hover a::before,
       .nav li:hover a::after {
         opacity: 100;
