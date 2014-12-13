@@ -326,6 +326,10 @@ only screen and (                min-resolution: 2dppx) {
 
 @media
 only screen and (max-height: 600px) {
+  #navigation {
+    overflow-y: auto;
+  }
+
   #navigation .social {
     position: static;
   }
