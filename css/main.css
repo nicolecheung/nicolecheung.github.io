@@ -335,13 +335,13 @@ ul {
       max-height: 100%;
     }
 
-    .selector .item .image {
-      overflow: hidden;
-    }
+  .selector .item .image {
+    overflow: hidden;
+  }
 
-    .selector .item img {
-      display: block;
-    }
+  .selector .item img {
+    display: block;
+  }
 
     .csstransforms .selector .item .image::before,
     .csstransforms .selector .item .image::after {
@@ -366,6 +366,76 @@ ul {
       border-right-color: transparent;
       border-left-color: #F8EED9;
     }
+
+  .selector .view {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    color: white;
+    line-height: 50px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    margin-top: -25px;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+    background: blue;
+    border-radius: 50%;
+  }
+
+  .csstransforms .selector .accents-one::before,
+  .csstransforms .selector .accents-one::after,
+  .csstransforms .selector .accents-two::before,
+  .csstransforms .selector .accents-two::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 0;
+    border: 1px solid white;
+    position: absolute;
+  }
+
+  .csstransforms .selector .accents-one,
+  .csstransforms .selector .accents-two {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .csstransforms .selector .accents-one::before,
+  .csstransforms .selector .accents-one::after {
+    left: 20px;
+    bottom: 20px;
+    transform: rotate(-45deg);
+    transform-origin: 0 0;
+  }
+
+  .csstransforms .selector .accents-one::after {
+    bottom: auto;
+    left: auto;
+    top: 20px;
+    right: 20px;
+    transform-origin: 100% 0;
+  }
+
+  .csstransforms .selector .accents-two::before,
+  .csstransforms .selector .accents-two::after {
+    right: 20px;
+    bottom: 20px;
+    transform: rotate(45deg);
+    transform-origin: 100% 0;
+  }
+
+  .csstransforms .selector .accents-two::after {
+    right: auto;
+    bottom: auto;
+    top: 20px;
+    left: 20px;
+    transform-origin: 0 0;
+  }
 
   .selector .caption {
     position: absolute;
