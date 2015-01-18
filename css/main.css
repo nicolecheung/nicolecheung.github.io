@@ -285,6 +285,7 @@ ul {
   position: relative;
   min-height: 600px;
   min-height: 100vh;
+  max-width: 600px;
 }
 
   .section > .content {
