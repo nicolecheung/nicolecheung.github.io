@@ -282,10 +282,15 @@ ul {
 }
 
 .section {
+  position: relative;
   min-height: 600px;
   min-height: 100vh;
-  padding: 56px 0;
 }
+
+  .section > .content {
+    padding-top: 150px;
+    padding-bottom: 56px;
+  }
 
 /* }}} ======================================================================
    Retina
@@ -340,11 +345,44 @@ only screen and (max-height: 600px) {
   #navigation .social {
     position: static;
   }
+
+  .section > .content {
+    padding-top: 56px;
+  }
 }
 
 /* }}} ======================================================================
    Helper classes
    {{{ ====================================================================== */
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background: white;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.pre-text {
+  white-space: pre-line;
+}
+
+.csstransforms .section > .content .vertically-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.italic {
+  font-style: italic;
+}
 
 /*
  * Image replacement
