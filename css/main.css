@@ -374,15 +374,24 @@ ul {
     text-align: center;
     color: white;
     line-height: 50px;
-    vertical-align: middle;
     text-transform: uppercase;
     margin-top: -25px;
     margin-left: -25px;
     width: 50px;
     height: 50px;
-    background: blue;
     border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transition-delay: 0.3s;
   }
+
+    .selector .item:hover .view {
+      opacity: 1;
+    }
+
+    .selector .view:hover {
+      background: rgb(110, 126, 190);
+    }
 
   .csstransforms .selector .accents-one::before,
   .csstransforms .selector .accents-one::after,
@@ -391,9 +400,21 @@ ul {
     content: "";
     display: block;
     width: 50px;
+    max-width: 0;
+    opacity: 0;
     height: 0;
     border: 1px solid white;
     position: absolute;
+    transition: all 0.3s ease;
+    transition-delay: 0.3s;
+  }
+
+  .csstransforms .selector .item:hover .accents-one::before,
+  .csstransforms .selector .item:hover .accents-one::after,
+  .csstransforms .selector .item:hover .accents-two::before,
+  .csstransforms .selector .item:hover .accents-two::after {
+    max-width: 50px;
+    opacity: 0.8;
   }
 
   .csstransforms .selector .accents-one,
