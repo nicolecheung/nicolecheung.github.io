@@ -293,6 +293,10 @@ ul {
     padding-bottom: 56px;
   }
 
+  .section img {
+    max-width: 100%
+  }
+
 .selector {
 }
 
