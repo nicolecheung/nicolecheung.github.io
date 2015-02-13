@@ -22,7 +22,7 @@ angular.module('desk').directive('selectorItem', function() {
         '<div class="caption">{{ caption }}</div>',
       '</div>'
     ].join('\n'),
-    transclude: true,
+    replace: true,
     scope: {
       src: "@src",
       caption: "@title"
