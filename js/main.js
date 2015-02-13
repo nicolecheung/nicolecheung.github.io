@@ -27,6 +27,6 @@ angular.module('desk').directive('selectorItem', function() {
       src: "@src",
       caption: "@title"
     }
-  }
+  };
 
 });
