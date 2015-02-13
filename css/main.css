@@ -164,7 +164,7 @@ ul {
   padding: 84px 0;
 }
 
-  #navigation > .content {
+  #navigation .content {
     max-width: 180px;
     margin: 0 auto;
   }
@@ -288,7 +288,7 @@ ul {
   max-width: 800px;
 }
 
-  .section > .content {
+  .section .content {
     padding-top: 150px;
     padding-bottom: 56px;
   }
@@ -532,7 +532,7 @@ only screen and (max-height: 600px) {
     position: static;
   }
 
-  .section > .content {
+  .section .content {
     padding-top: 56px;
   }
 }
@@ -558,7 +558,7 @@ only screen and (max-height: 600px) {
   white-space: pre-line;
 }
 
-.csstransforms .section > .content .vertically-center {
+.csstransforms .section .content .vertically-center {
   position: absolute;
   top: 50%;
   left: 0;
