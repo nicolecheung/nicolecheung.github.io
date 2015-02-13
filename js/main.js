@@ -31,18 +31,39 @@ angular.module('desk').directive('selectorItem', function() {
 
 angular.module('desk').directive('deskSection', function() {
   return {
-    restrict: 'E',
+    restrict: 'A',
     transclude: true,
     template: [
-      '<section id="{{ id }}" class="section">',
-        '<div class="content">',
-          '<ng-transclude></ng-transclude>',
-        '</div>',
-      '</section>'
+      '<div class="content">',
+        '<ng-transclude></ng-transclude>',
+      '</div>'
     ].join('\n'),
-    transclude: true,
-    scope: {
-      id: "@"
+    link: function(_, element) {
+      element.addClass('section');
     }
   }
+});
+
+
+angular.module('desk').directive('menuItem', function($compile) {
+  return {
+    restrict: 'E',
+    replace: true,
+    priority: -1,
+    template: '<li></li>',
+    scope: {
+      href: "@",
+      title: "@"
+    },
+    link: function(scope, element, attrs) {
+      var newEl = angular.element([
+        '<li du-scrollspy="{{ href.replace(\'#\', \'\') }}">',
+          '<a href="{{ href }}" du-smooth-scroll>{{ title }}</a>',
+        '</li>'
+      ].join('\n'));
+
+      $compile(newEl)(scope);
+      element.replaceWith(newEl);
+    }
+  };
 });
