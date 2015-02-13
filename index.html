@@ -3,185 +3,169 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="desk"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="desk"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" ng-app="desk"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Desk of NC</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Desk of NC</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="js/vendor/prefixfree.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser.
+        Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-        <script src="js/vendor/prefixfree.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <!-- Add your site or application content here -->
 
-        <!-- Add your site or application content here -->
+    <div id="main">
+      <div class="content">
 
-        <div id="main">
+        <div id="navigation">
           <div class="content">
+            <a href="#for-fun-experimental" id="logo"></a>
+            <nav class="nav">
+              <ul>
+                <li
+                  du-scrollspy="for-fun-experimental"
+                  ><a
+                  href="#for-fun-experimental"
+                  du-smooth-scroll
+                  >For Fun / Experimental</a></li>
 
-            <div id="navigation">
-              <div class="content">
-                <a href="#for-fun-experimental" id="logo"></a>
-                <nav class="nav">
-                  <ul>
-                    <li
-                      du-scrollspy="for-fun-experimental"
-                      ><a
-                      href="#for-fun-experimental"
+                <li
+                  du-scrollspy="promo-videos"
+                  ><a
+                  href="#promo-videos"
+                  du-smooth-scroll
+                  >Promo Videos</a></li>
+
+                <li
+                  du-scrollspy="motion"
+                  ><a
+                    href="#motion"
+                    du-smooth-scroll
+                  >Motion</a></li>
+
+                <li
+                  du-scrollspy="graphic-illustration"
+                  ><a
+                    href="#graphic-illustration"
+                    du-smooth-scroll
+                  >Graphic / Illustration</a></li>
+
+                <li
+                  du-scrollspy="about"
+                  ><a
+                      href="#about"
                       du-smooth-scroll
-                      >For Fun / Experimental</a></li>
-
-                    <li
-                      du-scrollspy="promo-videos"
-                      ><a
-                      href="#promo-videos"
-                      du-smooth-scroll
-                      >Promo Videos</a></li>
-
-                    <li
-                      du-scrollspy="motion"
-                      ><a
-                        href="#motion"
-                        du-smooth-scroll
-                      >Motion</a></li>
-
-                    <li
-                      du-scrollspy="graphic-illustration"
-                      ><a
-                        href="#graphic-illustration"
-                        du-smooth-scroll
-                      >Graphic / Illustration</a></li>
-
-                    <li
-                      du-scrollspy="about"
-                      ><a
-                          href="#about"
-                          du-smooth-scroll
-                      >About Me</a></li>
-                  </ul>
-                </nav>
-                <div class="social">
-                  <ul>
-                    <li class="twitter"><a href=""></a></li>
-                    <li class="instagram"><a href=""></a></li>
-                    <li class="vimeo"><a href=""></a></li>
-                    <li class="youtube"><a href=""></a></li>
-                  </ul>
-                </div>
-              </div>
+                  >About Me</a></li>
+              </ul>
+            </nav>
+            <div class="social">
+              <ul>
+                <li class="twitter"><a href=""></a></li>
+                <li class="instagram"><a href=""></a></li>
+                <li class="vimeo"><a href=""></a></li>
+                <li class="youtube"><a href=""></a></li>
+              </ul>
             </div>
-
-            <div id="body">
-
-              <section id="for-fun-experimental" class="section">
-                <div class="content">
-                  <div class="selector">
-                    <selector-item
-                      src="img/thumbnails/1.png"
-                      title="Awesomeness - 201"
-                    /></selector-item>
-
-                    <selector-item
-                        src="img/thumbnails/2.png"
-                        title="Awesomeness - 2013""
-                    /></selector-item>
-
-                    <selector-item
-                        src="img/thumbnails/3.png"
-                        title="Awesomeness - 2014"
-                    /></selector-item>
-
-                    <selector-item
-                        src="img/thumbnails/3.png"
-                        title="Awesomeness - 2014"
-                    /></selector-item>
-                  </div>
-                </div>
-              </section>
-
-              <section id="promo-videos" class="section">
-                <div class="content">
-                  test
-                </div>
-              </section>
-
-              <section id="motion" class="section">
-                <div class="content">
-                  Motion
-                </div>
-              </section>
-
-              <section id="graphic-illustration" class="section">
-                <div class="content">
-                  <h3>Work</h3>
-                  <img src="img/graphicillustration/smallworld_resize.png" />
-                  <img src="img/graphicillustration/smallworld2_resize.png" />
-
-                  <p>Part of my final exhibition in AUT that involved the idea
-                  of Generation-Z becoming overwhelmed with technology.
-                  Please refer to "Work" video.</p>
-
-                  <h3>Reach Out</h3>
-                  <img src="img/graphicillustration/reachout.png" />
-                  <p>A charity event.</p>
-
-                  <h3>Christmas Cards</h3>
-                  <img src="img/graphicillustration/edchristmas.png" />
-                  <p>Gingerbread house made out of Eastern Dragon products</p>
-
-
-
-
-                </div>
-              </section>
-
-              <section id="about" class="section">
-                <div class="content">
-                  <div class="centered-text pre-text italic">
-                    <div class="avatar"><img src="http://lorempixel.com/50/50"></div>
-
-                    Nicole Cheung
-                    nicole@deskofnc.com
-                    +6421 801 116
-
-                    Auckland University of Technology
-                    Bachelors of Design -
-                    Majoring in Graphic Design
-
-                    Media Design School
-                    Diploma of Visual Effects and
-                    Motion Graphics
-
-                    Hogwarts
-                  </div>
-                </div>
-              </section>
-
-            </div>
-
           </div>
         </div>
 
-        <script src="js/vendor/angular.min.js"></script>
-        <script src="js/vendor/angular-scroll.min.js"></script>
-        <script src="js/main.js"></script>
+        <div id="body">
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-    </body>
+          <desk-section id="for-fun-experimental">
+            <div class="selector">
+              <selector-item
+                src="img/thumbnails/1.png"
+                title="Awesomeness - 201"
+              ></selector-item>
+
+              <selector-item
+                  src="img/thumbnails/2.png"
+                  title="Awesomeness - 2013"
+              ></selector-item>
+
+              <selector-item
+                  src="img/thumbnails/3.png"
+                  title="Awesomeness - 2014"
+              ></selector-item>
+
+              <selector-item
+                  src="img/thumbnails/3.png"
+                  title="Awesomeness - 2014"
+              ></selector-item>
+            </div>
+          </desk-section>
+
+          <desk-section id="promo-videos">
+              Two section
+          </desk-section>
+
+          <desk-section id="motion">
+              Motion
+          </desk-section>
+
+          <desk-section id="graphic-illustration">
+            <h3>Work</h3>
+            <img src="img/graphicillustration/smallworld_resize.png" />
+            <img src="img/graphicillustration/smallworld2_resize.png" />
+
+            <p>Part of my final exhibition in AUT that involved the idea
+            of Generation-Z becoming overwhelmed with technology.
+            Please refer to "Work" video.</p>
+
+            <h3>Reach Out</h3>
+            <img src="img/graphicillustration/reachout.png" />
+            <p>A charity event.</p>
+
+            <h3>Christmas Cards</h3>
+            <img src="img/graphicillustration/edchristmas.png" />
+            <p>Gingerbread house made out of Eastern Dragon products</p>
+          </desk-section>
+
+          <desk-section id="about">
+            <div class="centered-text pre-text italic">
+              <div class="avatar"><img src="http://lorempixel.com/50/50"></div>
+
+              Nicole Cheung
+              nicole@deskofnc.com
+              +6421 801 116
+
+              Auckland University of Technology
+              Bachelors of Design -
+              Majoring in Graphic Design
+
+              Media Design School
+              Diploma of Visual Effects and
+              Motion Graphics
+            </div>
+          </desk-section>
+
+        </div>
+
+      </div>
+    </div>
+
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/angular-scroll.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+  </body>
 </html>

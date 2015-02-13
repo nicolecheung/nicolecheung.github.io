@@ -6,7 +6,6 @@ angular
   ]);
 
 angular.module('desk').directive('selectorItem', function() {
-
   return {
     restrict: 'E',
     template: [
@@ -28,5 +27,22 @@ angular.module('desk').directive('selectorItem', function() {
       caption: "@title"
     }
   };
+});
 
+angular.module('desk').directive('deskSection', function() {
+  return {
+    restrict: 'E',
+    transclude: true,
+    template: [
+      '<section id="{{ id }}" class="section">',
+        '<div class="content">',
+          '<ng-transclude></ng-transclude>',
+        '</div>',
+      '</section>'
+    ].join('\n'),
+    transclude: true,
+    scope: {
+      id: "@"
+    }
+  }
 });
