@@ -16,7 +16,7 @@ angular.module('desk')
         '<div class="accents-two"></div>',
         '<div class="view">View</div>',
         '<div class="image-wrapper">',
-          '<div class="image">',
+          '<div class="image" ng-click="ngClick()">',
             '<img src="{{ src }}" />',
           '</div>',
         '</div>',
@@ -26,7 +26,8 @@ angular.module('desk')
     replace: true,
     scope: {
       src: "@src",
-      caption: "@title"
+      caption: "@title",
+      ngClick: "&?"
     }
   };
 })

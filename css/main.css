@@ -113,6 +113,10 @@ a {
   text-decoration: none;
 }
 
+[ng-click] {
+  cursor: pointer;
+}
+
 body {
   background: #F8EED9;
 }
