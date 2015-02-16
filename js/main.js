@@ -14,9 +14,9 @@ angular.module('desk')
       '<div class="item">',
         '<div class="accents-one"></div>',
         '<div class="accents-two"></div>',
-        '<div class="view">View</div>',
+        '<div class="view" ng-click="onClick()">View</div>',
         '<div class="image-wrapper">',
-          '<div class="image" ng-click="ngClick()">',
+          '<div class="image">',
             '<img src="{{ src }}" />',
           '</div>',
         '</div>',
@@ -27,7 +27,7 @@ angular.module('desk')
     scope: {
       src: "@src",
       caption: "@title",
-      ngClick: "&?"
+      onClick: "&?click"
     }
   };
 })
