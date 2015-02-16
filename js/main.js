@@ -97,11 +97,15 @@ angular.module('desk')
       scope.setPage = function(page) {
         sectionCtrl.setPage(page);
       }
+
+      scope.$on('reset:pages', function() {
+        scope.setPage(1);
+      });
     }
   };
 })
 
-.directive('menuItem', function($compile) {
+  .directive('menuItem', function($compile, $rootScope) {
   return {
     restrict: 'E',
     replace: true,
@@ -112,9 +116,13 @@ angular.module('desk')
       title: "@"
     },
     link: function(scope, element, attrs) {
+      scope.resetPages = function() {
+        $rootScope.$broadcast('reset:pages');
+      };
+
       var newEl = angular.element([
         '<li du-scrollspy="{{ href.replace(\'#\', \'\') }}">',
-          '<a href="{{ href }}" du-smooth-scroll>{{ title }}</a>',
+          '<a ng-click="resetPages()" href="{{ href }}" du-smooth-scroll>{{ title }}</a>',
         '</li>'
       ].join('\n'));
 
