@@ -37,7 +37,7 @@ angular.module('desk')
     transclude: true,
     template: [
       '<div class="pages">',
-        '<div class="content">',
+        '<div class="section-page content">',
           '<ng-transclude></ng-transclude>',
         '</div>',
       '</div>'
@@ -66,6 +66,7 @@ angular.module('desk')
       var currentPages = $pages.data('pages') + 1 || 2;
       $pages.data('pages', currentPages)
       $pages.css({ width: (currentPages * 100) + '%' });
+      $pages.children().css({ width: (100 / currentPages) + '%' });
     }
   };
 })

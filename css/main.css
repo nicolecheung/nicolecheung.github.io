@@ -286,13 +286,17 @@ ul {
   min-height: 600px;
   min-height: 100vh;
   max-width: 800px;
+  overflow-x: hidden;
 }
 
   .section .pages {
     width: 100%;
+    display: table;
   }
 
-  .section .content {
+  .section-page {
+    display: table-cell;
+    vertical-align: top;
     padding-top: 150px;
     padding-bottom: 56px;
   }
