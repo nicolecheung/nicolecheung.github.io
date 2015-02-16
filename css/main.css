@@ -553,7 +553,7 @@ only screen and (                min-resolution: 2dppx) {
    ========================================================================== */
 
 @media
-only screen and (max-height: 600px) {
+only screen and (max-height: 600px) and (min-width: 681px) {
   #navigation {
     overflow-y: auto;
   }
@@ -591,6 +591,74 @@ only screen and (max-width: 860px) {
 
   #body {
     margin-left: 260px;
+  }
+
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media
+only screen and (max-width: 680px) {
+
+  #main::before,
+  #main::after {
+    height: 80px;
+  }
+
+  #navigation {
+    width: 100%;
+    padding-top: 18px;
+    z-index: 100;
+    pointer-events: none;
+  }
+
+    #navigation .nav {
+      display: none;
+    }
+
+    #navigation .social {
+      bottom: 16px;
+      pointer-events: auto;
+    }
+
+  #logo {
+    margin: 0;
+  }
+
+  #body {
+    margin-left: 0;
+  }
+
+  .section {
+    margin: 0 auto;
+  }
+
+  .section-page,
+  .section .no-pages {
+    padding-top: 80px;
+  }
+
+  .section h1,
+  .section h2,
+  .section h3,
+  .section h4,
+  .section h5,
+  .section img,
+  .section p,
+  .section .selector {
+    width: 300px;
+    max-width: 100%;
+  }
+
+  .section .selector {
+    margin: 0 auto;
+  }
+
+  .section .selector .item {
+    float: none;
+    margin: 3em auto;
   }
 
 }
