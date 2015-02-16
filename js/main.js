@@ -5,7 +5,9 @@ angular
     'duScroll'
   ]);
 
-angular.module('desk').directive('selectorItem', function() {
+angular.module('desk')
+
+.directive('selectorItem', function() {
   return {
     restrict: 'E',
     template: [
@@ -27,29 +29,52 @@ angular.module('desk').directive('selectorItem', function() {
       caption: "@title"
     }
   };
-});
+})
 
-angular.module('desk').directive('deskSection', function() {
+.directive('deskSection', function() {
   return {
     restrict: 'A',
     transclude: true,
     template: [
-      '<div class="content">',
-        '<ng-transclude></ng-transclude>',
+      '<div class="pages">',
+        '<div class="content">',
+          '<ng-transclude></ng-transclude>',
+        '</div>',
       '</div>'
     ].join('\n'),
     link: function(_, element) {
       element.addClass('section');
     }
-  }
-});
+  };
+})
 
+.directive('sectionPage', function() {
+  return {
+    restrict: 'E',
+    transclude: true,
+    replace: true,
+    priority: 100,
+    template: [
+      '<div class="section-page">',
+        '<ng-transclude></ng-transclude>',
+      '</div>',
+    ].join('\n'),
+    link: function(_, element) {
+      var $content = element.parent().parent();
+      $content.after(element);
+      var $pages = $content.parent();
+      var currentPages = $pages.data('pages') + 1 || 2;
+      $pages.data('pages', currentPages)
+      $pages.css({ width: (currentPages * 100) + '%' });
+    }
+  };
+})
 
-angular.module('desk').directive('menuItem', function($compile) {
+.directive('menuItem', function($compile) {
   return {
     restrict: 'E',
     replace: true,
-    priority: -1,
+    priority: 100,
     template: '<li></li>',
     scope: {
       href: "@",
