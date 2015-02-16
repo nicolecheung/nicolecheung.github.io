@@ -36,14 +36,13 @@ angular.module('desk')
     restrict: 'A',
     transclude: true,
     template: [
-      '<div class="pages">',
-        '<div class="section-page content">',
-          '<ng-transclude></ng-transclude>',
-        '</div>',
+      '<div class="pages" ng-transclude>',
       '</div>'
     ].join('\n'),
     link: function(_, element) {
       element.addClass('section');
+    },
+    controller: function($scope) {
     }
   };
 })
@@ -54,16 +53,14 @@ angular.module('desk')
     transclude: true,
     replace: true,
     priority: 100,
+    require: '^deskSection',
     template: [
-      '<div class="section-page">',
-        '<ng-transclude></ng-transclude>',
+      '<div class="section-page" ng-transclude>',
       '</div>',
     ].join('\n'),
     link: function(_, element) {
-      var $content = element.parent().parent();
-      $content.after(element);
-      var $pages = $content.parent();
-      var currentPages = $pages.data('pages') + 1 || 2;
+      var $pages = element.parent();
+      var currentPages = $pages.data('pages') + 1 || 1;
       $pages.data('pages', currentPages)
       $pages.css({ width: (currentPages * 100) + '%' });
       $pages.children().css({ width: (100 / currentPages) + '%' });
