@@ -292,6 +292,13 @@ ul {
   .section .pages {
     width: 100%;
     display: table;
+    margin-left: 0;
+    transition: margin-left .3s ease;
+  }
+
+  .section .no-pages {
+    padding-top: 150px;
+    padding-bottom: 56px;
   }
 
   .section-page {

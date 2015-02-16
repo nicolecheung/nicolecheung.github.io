@@ -36,13 +36,40 @@ angular.module('desk')
     restrict: 'A',
     transclude: true,
     template: [
-      '<div class="pages" ng-transclude>',
+      '<div ng-class="{ pages: true, \'no-pages\': (pages == 0) }"',
+      '     ng-style="{ ',
+              'width: (math.max(pages, 1) * 100) + \'%\',',
+              '\'margin-left\': ((currentPage - 1) * -100) + \'%\'',
+            '}"',
+      '     ng-transclude>',
       '</div>'
     ].join('\n'),
-    link: function(_, element) {
+    scope: {
+      pages: "=?",
+      currentPage: "=?"
+    },
+    link: function(scope, element) {
+      scope.math = Math;
+      scope.pages = scope.pages || 0;
+      scope.currentPage = scope.currentPage || 1;
       element.addClass('section');
     },
     controller: function($scope) {
+      this.setPages = function(page) {
+        $scope.pages = page;
+      }
+
+      this.getPages = function() {
+        return $scope.pages;
+      }
+
+      this.setPage = function(page) {
+        $scope.currentPage = page;
+      }
+
+      this.getPage = function() {
+        return $scope.currentPage;
+      }
     }
   };
 })
@@ -58,12 +85,17 @@ angular.module('desk')
       '<div class="section-page" ng-transclude>',
       '</div>',
     ].join('\n'),
-    link: function(_, element) {
+    link: function(scope, element, _, sectionCtrl) {
+      var currentPages = sectionCtrl.getPages() + 1 || 1;
+      sectionCtrl.setPages(currentPages);
+
+      // Need to ensure all the pages have a fixed proportion of width
       var $pages = element.parent();
-      var currentPages = $pages.data('pages') + 1 || 1;
-      $pages.data('pages', currentPages)
-      $pages.css({ width: (currentPages * 100) + '%' });
       $pages.children().css({ width: (100 / currentPages) + '%' });
+
+      scope.setPage = function(page) {
+        sectionCtrl.setPage(page);
+      }
     }
   };
 })
