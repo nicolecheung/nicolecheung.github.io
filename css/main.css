@@ -319,7 +319,9 @@ ul {
   .section h4,
   .section h5,
   .section img,
-  .section p {
+  .section p,
+  iframe {
+    display: block;
     width: 500px;
     max-width: 100%;
     margin: 2em auto 1em auto;
