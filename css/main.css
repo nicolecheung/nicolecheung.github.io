@@ -251,6 +251,12 @@ ul {
     bottom: 90px;
   }
 
+  .social a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
   .social ul {
     text-align: center;
   }
