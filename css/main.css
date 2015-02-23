@@ -532,6 +532,12 @@ only screen and (                min-resolution: 2dppx) {
     background-image: url(../img/logo@2x.png);
   }
 
+  .social li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
   .social .twitter {
     background-image: url(../img/social_twitter@2x.png);
   }
