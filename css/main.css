@@ -298,7 +298,7 @@ ul {
     width: 100%;
     display: table;
     margin-left: 0;
-    transition: margin-left .3s ease;
+    transition: margin-left .6s ease;
   }
 
   .section .no-pages {
