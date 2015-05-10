@@ -71,6 +71,12 @@ angular.module('desk')
       this.getPage = function() {
         return $scope.currentPage;
       }
+
+      this.on = function(page, cb) {
+        $scope.$watch('currentPage', function(newPage) {
+          if (page === newPage) { cb(); }
+        });
+      }
     }
   };
 })
@@ -82,11 +88,13 @@ angular.module('desk')
     replace: true,
     priority: 100,
     require: '^deskSection',
+    scope: {},
     template: [
       '<div class="section-page" ng-transclude>',
       '</div>',
     ].join('\n'),
-    link: function(scope, element, _, sectionCtrl) {
+    link: function(scope, element, _, sectionCtrl, transclude) {
+      var currentPage = (sectionCtrl.getPages() || 0) + 1;
       var currentPages = sectionCtrl.getPages() + 1 || 1;
       sectionCtrl.setPages(currentPages);
 
@@ -98,14 +106,23 @@ angular.module('desk')
         sectionCtrl.setPage(page);
       }
 
+      sectionCtrl.on(currentPage, function() {
+        scope.loaded = true;
+      });
+
       scope.$on('reset:pages', function() {
         scope.setPage(1);
+      });
+
+      transclude(scope, function(clone) {
+        element.empty();
+        element.append(clone);
       });
     }
   };
 })
 
-  .directive('menuItem', function($compile, $rootScope) {
+.directive('menuItem', function($compile, $rootScope) {
   return {
     restrict: 'E',
     replace: true,
