@@ -104,6 +104,12 @@
                     click="setPage(7)"
                 ></selector-item>
 
+                <selector-item
+                    src="img/thumbnails/Thumbnail-Dancinginthemoonlight.png"
+                    title="Dancing In The Moonlight"
+                    click="setPage(8)"
+                ></selector-item>
+
               </div>
             </section-page>
 
@@ -230,6 +236,24 @@
 
             </section-page>
 
+            <section-page>
+
+              <h3>Dancing In The Moonlight</h3>
+              <iframe
+              ng-if="loaded"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/8u3y0vn2_7U"
+              frameborder="0"
+              allowfullscreen>
+              </iframe>
+
+              <p>
+                A fun little experimental video with some of NZ's top Bboys. Always a fan of one-shot videos.
+              </p>
+              <p><a href ng-click="setPage(1)">&lt;&lt;</a></p>
+
+            </section-page>
 
 
           </section>
